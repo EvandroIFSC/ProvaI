@@ -17,11 +17,17 @@ routes.get("/:id",(req,res)=>{
     res.status(200).json(dados[req.params.id])
 
 routes.post("/",(req,res)=>{
-    const novaPessoa = req.body
-    novaPessoa.id = indice + 1
-    dados.push(novaPessoa)
+    dados.push(req.body)
     res.status(200)
 })
+
+routes.put("/:id",(req,res)=>{
+
+    console.log(req.body)
+    dados[req.params.id-1] = req.body
+    res.status(200)
+})
+
 
 })
 routes.delete("/:id",(req,res)=>{
