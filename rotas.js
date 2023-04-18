@@ -14,10 +14,15 @@ routes.get("/",(req,res)=>{
     res.status(200).json(dados)
 })
 routes.get("/:id",(req,res)=>{
-    res.status(200).json(lista[req.params.id-1])
+    res.status(200).json(dados[req.params.id])
+
+routes.post("/",(req,res)=>{
+    res.status(200).json(dados)
+})
+
 })
 routes.delete("/:id",(req,res)=>{
-    lista.splice(req.params.id-1,1)
+    dados.splice(req.params.id-1,1)
     res.status(200).redirect("/")
 })
 
