@@ -17,7 +17,10 @@ routes.get("/:id",(req,res)=>{
     res.status(200).json(dados[req.params.id])
 
 routes.post("/",(req,res)=>{
-    res.status(200).json(dados)
+    const novaPessoa = req.body
+    novaPessoa.id = indice + 1
+    dados.push(novaPessoa)
+    res.status(200)
 })
 
 })
